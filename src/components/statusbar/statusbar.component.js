@@ -69,7 +69,7 @@ class Statusbar extends Component {
           width: 35px;
           text-align: center;
           font: 700 13px 'Yu Gothic', serif;
-          color: rgba(212, 190, 152, 0.5);
+          color: rgba(215, 215, 215, 0.5);
           padding: 6px 0;
           transition: all .1s;
           cursor: pointer;
@@ -91,7 +91,7 @@ class Statusbar extends Component {
       }
 
       #tabs ul li[active]:not(:last-child) {
-          color: #d4be98;
+          color: #dfdfdf;
           font-size: 13px;
           padding: 6px 0;
       }
@@ -208,7 +208,7 @@ class Statusbar extends Component {
 
       .fastlink {
           border: 0;
-          background: #32302f;
+          background: #484848;
           color: #a9b665;
           cursor: pointer;
           border-radius: 5px 15px 15px 5px;
@@ -272,28 +272,53 @@ class Statusbar extends Component {
     this.activateByKey(Number(tab.getAttribute("tab-index")));
   }
 
+  // handleWheelScroll(event) {
+  //   if (!event) return;
+
+  //   let { target, wheelDelta } = event;
+
+  //   if (target.shadow && target.shadow.activeElement) return;
+
+  //   let activeTab = -1;
+  //   this.refs.tabs.forEach((tab, index) => {
+  //     if (tab.getAttribute("active") === "") {
+  //       activeTab = index;
+  //     }
+  //   });
+
+  //   if (wheelDelta > 0) {
+  //     this.activateByKey((activeTab + 1) % (this.refs.tabs.length - 1));
+  //   } else {
+  //     this.activateByKey(
+  //       (activeTab - 1) < 0 ? this.refs.tabs.length - 2 : activeTab - 1,
+  //     );
+  //   }
+  // }
   handleWheelScroll(event) {
     if (!event) return;
-
+  
     let { target, wheelDelta } = event;
-
+  
     if (target.shadow && target.shadow.activeElement) return;
-
+  
     let activeTab = -1;
     this.refs.tabs.forEach((tab, index) => {
       if (tab.getAttribute("active") === "") {
         activeTab = index;
       }
     });
-
+  
     if (wheelDelta > 0) {
-      this.activateByKey((activeTab + 1) % (this.refs.tabs.length - 1));
-    } else {
+      // scroll up -> go to the previous tab
       this.activateByKey(
         (activeTab - 1) < 0 ? this.refs.tabs.length - 2 : activeTab - 1,
       );
+    } else {
+      // scroll down -> go to the next tab
+      this.activateByKey((activeTab + 1) % (this.refs.tabs.length - 1));
     }
   }
+  
 
   handleKeyPress(event) {
     if (!event) return;

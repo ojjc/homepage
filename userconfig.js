@@ -3,20 +3,20 @@ let saved_config = JSON.parse(localStorage.getItem("CONFIG"));
 const default_config = {
   overrideStorage: true,
   temperature: {
-    location: 'Matão, São Paulo',
-    scale: "C",
+    location: 'New York',
+    scale: "F",
   },
   clock: {
-    format: "h:i p",
+    format: "X - a",
     iconColor: "#ea6962",
   },
   search: {
     engines: {
       g: ["https://google.com/search?q=", "Google"],
-      d: ["https://duckduckgo.com/html?q=", "DuckDuckGo"],
       y: ["https://youtube.com/results?search_query=", "Youtube"],
       r: ["https://www.reddit.com/search/?q=", "Reddit"],
-      p: ["https://www.pinterest.es/search/pins/?q=", "Pinterest"],
+      p: ["https://www.pinterest.com/search/pins/?q=", "Pinterest"],
+      a: ["https://www.amazon.com/s?k=", "Amazon"],
     },
   },
   keybindings: {
@@ -29,29 +29,12 @@ const default_config = {
   openLastVisitedTab: true,
   tabs: [
     {
-      name: "chi ll",
-      background_url: "src/img/banners/cbg-2.gif",
+      name: "essentials",
+      // background_url: "src/img/banners/cbg-2.gif",
+      background_url: "src/img/banners/opening-crop.gif",
       categories: [{
-        name: "Social Media",
+        name: "media",
         links: [
-          {
-            name: "whatsapp",
-            url: "https://web.whatsapp.com/",
-            icon: "brand-whatsapp",
-            icon_color: "#a9b665",
-          },
-          {
-            name: "twitter",
-            url: "https://twitter.com/home",
-            icon: "brand-twitter-filled",
-            icon_color: "#7daea3",
-          },
-          {
-            name: "reddit",
-            url: "https://www.reddit.com/",
-            icon: "brand-reddit",
-            icon_color: "#e78a4e",
-          },
           {
             name: "youtube",
             url: "https://www.youtube.com/",
@@ -64,134 +47,260 @@ const default_config = {
             icon: "brand-twitch",
             icon_color: "#d3869b",
           },
+          {
+            name: "streameast",
+            url: "https://the.streameast.app/v78",
+            icon: "eye",
+            icon_color: "#89b482",
+          },
         ],
       }, {
-        name: "Games",
+        name: "prod",
         links: [
           {
-            name: "chess",
-            url: "https://www.chess.com/home",
-            icon: "chess-queen-filled",
-            icon_color: "#a9b665",
-          },
-          {
-            name: "monkeytype",
-            url: "https://monkeytype.com/",
-            icon: "keyboard",
+            name: "reddit",
+            url: "https://www.reddit.com/",
+            icon: "brand-reddit",
             icon_color: "#e78a4e",
           },
           {
-            name: "tetris",
-            url: "https://tetris.com/",
-            icon: "brand-apple-arcade",
+            name: "pinterest",
+            url: "https://www.pinterest.com/",
+            icon: "brand-pinterest",
             icon_color: "#ea6962",
+          },
+          {
+            name: "twitter",
+            url: "https://twitter.com/home",
+            icon: "brand-twitter-filled",
+            icon_color: "#7daea3",
+          },
+          {
+            name: "insta",
+            url: "https://www.instagram.com/",
+            icon: "brand-instagram",
+            icon_color: "#e47cc1"
           },
         ],
       }, {
-        name: "Video",
+        name: "shopper",
         links: [
           {
-            name: "disney+",
-            url: "https://www.disneyplus.com/home",
-            icon: "brand-disney",
-            icon_color: "#7daea3",
+            name: "amazon",
+            url: "https://amazon.com/",
+            icon: "brand-amazon",
+            icon_color: "#FE9800",
           },
           {
-            name: "primevideo",
-            url: "https://www.primevideo.com/region/eu/?ref_=dv_web_unknown",
-            icon: "brand-amazon",
-            icon_color: "#7daea3",
+            name: "ebay",
+            url: "https://www.ebay.com/",
+            icon: "briefcase",
+            icon_color: "#6B9312",
+          },
+          {
+            name: "etsy",
+            url: "https://www.etsy.com/",
+            icon: "brand-etsy",
+            icon_color: "#F27131",
           },
         ],
       }],
     },
     {
-      name: "design",
-      background_url: "src/img/banners/cbg-6.gif",
+      name: "extra",
+      // background_url: "src/img/banners/dvd-crop.gif",
+      background_url: "src/img/banners/flowers-2-crop.gif",
+      // background_url: "src/img/banners/kiss-crop-2-dark.gif", // a-drive-2-editred.gif
       categories: [
         {
-          name: "inspiration",
+          name: "sbubby",
           links: [
             {
-              name: "pinterest",
-              url: "https://www.pinterest.es/",
-              icon: "brand-pinterest",
+              name: "brightspace",
+              url: "https://mycourses.stonybrook.edu/d2l/login",
+              icon: "school",
               icon_color: "#ea6962",
             },
             {
-              name: "artstation",
-              url: "https://www.artstation.com/?sort_by=community",
-              icon: "chart-area",
+              name: "solar",
+              url: "https://prod.ps.stonybrook.edu/psp/csprods/?cmd=login",
+              icon: "shield",
               icon_color: "#7daea3",
             },
             {
-              name: "leonardo ai",
-              url: "https://app.leonardo.ai/",
-              icon: "brand-openai",
+              name: "classie",
+              url: "https://classie-evals.stonybrook.edu/",
+              icon: "file-search",
               icon_color: "#89b482",
             },
             {
-              name: "dribble",
-              url: "https://dribbble.com/following",
-              icon: "brand-dribbble-filled",
+              name: "deg-works",
+              url: "it.stonybrook.edu/services/degree-works",
+              icon: "activity-heartbeat",
               icon_color: "#d3869b",
             },
           ],
         },
         {
-          name: "resources",
+          name: "ranking",
           links: [
             {
-              name: "figma",
-              url: "https://www.figma.com",
-              icon: "brand-figma",
-              icon_color: "#d3869b",
-            },
-            {
-              name: "uxpro",
-              url: "https://uxpro.cc/",
-              icon: "components",
-              icon_color: "#a9b665",
-            },
-            {
-              name: "colorhunt",
-              url: "https://colorhunt.co/",
-              icon: "color-picker",
+              name: "last.fm",
+              url: "https://www.last.fm/user/ojjc",
+              icon: "brand-lastfm",
               icon_color: "#ea6962",
             },
             {
-              name: "adobe color",
-              url: "https://color.adobe.com/es/create/color-wheel",
-              icon: "brand-adobe",
+              name: "rym",
+              url: "https://rateyourmusic.com/",
+              icon: "vinyl",
               icon_color: "#7daea3",
             },
             {
-              name: "terminalsexy",
-              url: "https://terminal.sexy",
-              icon: "prompt",
-              icon_color: "#e78a4e",
+              name: "mal",
+              url: "https://myanimelist.net/profile/ojja",
+              icon: "alien",
+              icon_color: "#89b482",
             },
+            {
+              name: "letterboxd",
+              url: "https://myanimelist.net/profile/ojja",
+              icon: "brand-letterboxd",
+              // icon_color: "#FF8000",
+              icon_color: "#d3869b"
+            }
+            // {
+            //   name: "adobe color",
+            //   url: "https://color.adobe.com/es/create/color-wheel",
+            //   icon: "brand-adobe",
+            //   icon_color: "#a9b665",
+            // },
+            // {
+            //   name: "terminalsexy",
+            //   url: "https://terminal.sexy",
+            //   icon: "prompt",
+            //   icon_color: "#e78a4e",
+            // },
           ],
         },
         {
-          name: "resources 3d",
+          name: "google",
           links: [
             {
-              name: "thingiverse",
-              url: "https://www.thingiverse.com/",
-              icon: "circle-letter-t",
+              name: "gmail",
+              url: "https://mail.google.com/mail/u/0/#inbox",
+              icon: "brand-gmail",
+              icon_color: "#ea6962",
+            },
+            {
+              name: "drive",
+              url: "https://drive.google.com/drive/u/0/my-drive",
+              icon: "brand-google-drive",
               icon_color: "#7daea3",
+            },
+            {
+              name: "calendar",
+              url: "https://calendar.google.com/calendar/u/0/r?pli=1",
+              icon: "calendar",
+              icon_color: "#89b482",
             },
           ],
         },
       ],
     },
     {
-      name: "dev",
-      background_url: "src/img/banners/cbg-7.gif",
+      name: "nerd",
+      // background_url: "src/img/banners/cbg-7.gif",
+      // background_url: "src/img/banners/dvd-crop.gif",
+      // background_url: "src/img/banners/gojo-eye-2.gif",
+      // background_url: "src/img/banners/a-train-3-crop.gif",
+      background_url: "src/img/banners/camera-crop.gif",
       categories: [
         {
-          name: "repositories",
+          name: "subreddits",
+          links: [
+            {
+              name: "r/hwswap",
+              url: "https://www.reddit.com/r/hardwareswap/",
+              // icon: "brand-openai",
+              icon_color: "#89b482",
+            },
+            {
+              name: "r/sffpc",
+              url: "https://www.reddit.com/r/sffpc/",
+              // icon: "brand-flutter",
+              icon_color: "#7daea3",
+            },
+            {
+              name: "r/kpop",
+              url: "https://www.reddit.com/r/kpop/",
+              // icon: "brand-vscode",
+              icon_color: "#7daea3",
+            },
+            {
+              name: "r/malelivingspace",
+              url: "https://www.reddit.com/r/malelivingspace/",
+              // icon: "brand-vscode",
+              icon_color: "#7daea3",
+            },
+            {
+              name: "r/unixporn",
+              url: "https://www.reddit.com/r/unixporn/",
+              // icon: "brand-vscode",
+              icon_color: "#7daea3",
+            },
+            {
+              name: "r/animetitties",
+              url: "https://www.reddit.com/r/anime_titties/",
+              // icon: "biohazard",
+              icon_color: "#ea6962",
+            },
+            
+          ],
+        },
+        {
+          name: "doom-scrolling",
+          links: [
+            {
+              name: "neocities",
+              url: "https://neocities.org/browse",
+              icon: "building",
+              icon_color: "#a9b665",
+            },
+            {
+              name: "post-office",
+              url: "https://afternoon.dynu.com/letterbox.html",
+              icon: "mailbox",
+              icon_color: "#6E4319",
+            },
+            {
+              name: "/wg/",
+              url: "https://boards.4chan.org/wg/",
+              icon: "camera-selfie",
+              icon_color: "#16538C",
+            },
+            {
+              name: "/lit/",
+              url: "https://boards.4chan.org/lit/",
+              icon: "book-2",
+              icon_color: "#e78a4e",
+            },
+            {
+              name: "/p/",
+              url: "https://boards.4chan.org/p/",
+              icon: "camera",
+              icon_color: "#ea6962",
+            },
+            {
+              name: "/out/",
+              url: "https://boards.4chan.org/out/",
+              icon: "leaf",
+              icon_color: "#8EE095",
+            }
+          ],
+        },
+        {
+          name: "repo",
           links: [
             {
               name: "github",
@@ -207,112 +316,98 @@ const default_config = {
             },
           ],
         },
-        {
-          name: "resources",
-          links: [
-            {
-              name: "phind",
-              url: "https://www.phind.com/",
-              icon: "brand-openai",
-              icon_color: "#89b482",
-            },
-            {
-              name: "flutter",
-              url: "https://docs.flutter.dev/ui",
-              icon: "brand-flutter",
-              icon_color: "#7daea3",
-            },
-            {
-              name: "hacktricks",
-              url: "https://book.hacktricks.xyz/welcome/readme",
-              icon: "biohazard",
-              icon_color: "#ea6962",
-            },
-            {
-              name: "vscode",
-              url: "https://vscode.dev/",
-              icon: "brand-vscode",
-              icon_color: "#7daea3",
-            },
-          ],
-        },
-        {
-          name: "challenges",
-          links: [
-            {
-              name: "hackthebox",
-              url: "https://app.hackthebox.com",
-              icon: "box",
-              icon_color: "#a9b665",
-            },
-            {
-              name: "cryptohack",
-              url: "https://cryptohack.org/challenges/",
-              icon: "brain",
-              icon_color: "#e78a4e",
-            },
-            {
-              name: "tryhackme",
-              url: "https://tryhackme.com/dashboard",
-              icon: "brand-onedrive",
-              icon_color: "#ea6962",
-            },
-            {
-              name: "hackerrank",
-              url: "https://www.hackerrank.com/dashboard",
-              icon: "code-asterix",
-              icon_color: "#a9b665",
-            },
-          ],
-        },
       ],
     },
     {
-      name: "myself",
-      background_url: "src/img/banners/cbg-9.gif",
+      name: "oops !",
+      // background_url: "src/img/banners/cbg-9.gif",
+      // background_url: "src/img/banners/shuffle-crop.gif",
+      background_url: "src/img/banners/closing-crop.gif",
       categories: [
         {
-          name: "mails",
+          name: "oops! 😭",
           links: [
             {
-              name: "gmail",
-              url: "https://mail.google.com/mail/u/0/",
-              icon: "brand-gmail",
+              name: "hydrahd",
+              url: "https://hydrahd.com/",
+              icon: "badge-hd",
+              icon_color: "#A50A0A",
+            },
+            {
+              name: "braflix",
+              url: "https://www.braflix.ru/",
+              icon: "movie",
               icon_color: "#ea6962",
+            },
+            {
+              name: "flixhq",
+              url: "https://flixhq.click/home",
+              icon: "brand-flightradar24",
+              icon_color: "#9CC436",
+            },
+            {
+              name: "dramacool",
+              url: "https://kissasian.lu/",
+              icon: "massage",
+              icon_color: "#33AFB0",
+            },
+            {
+              name: "kissasian",
+              url: "https://asianc.sh//",
+              icon: "torii",
+              icon_color: "#E2B80A",
             },
           ],
         },
         {
-          name: "storage",
+          name: "blogs",
           links: [
             {
-              name: "drive",
-              url: "https://drive.google.com/drive/u/0/my-drive",
-              icon: "brand-google-drive",
+              name: "wikipedia",
+              url: "https://www.wikipedia.com",
+              icon: "brand-wikipedia",
+              icon_color: "white",
+            },
+            {
+              name: "hacker-news",
+              url: "https://news.ycombinator.com/",
+              icon: "speakerphone",
+              icon_color: "#CC5200",
+            },
+            {
+              name: "r/piracy",
+              url: "https://www.reddit.com/r/Piracy/wiki/megathread/movies_and_tv/#wiki_.25B6.FE0F_asianc",
+              icon: "skull",
               icon_color: "#e78a4e",
             },
             {
-              name: "dropbox",
-              url: "https://www.dropbox.com/h?role=personal&di=left_nav",
-              icon: "box-seam",
-              icon_color: "#7daea3",
-            },
-            {
-              name: "fotos",
-              url: "https://photos.google.com/u/1",
-              icon: "photo-filled",
-              icon_color: "#ea6962",
+              name: "the-onion",
+              url: "https://www.theonion.com/",
+              icon: "sleigh",
+              icon_color: "#89b482",
             },
           ],
         },
         {
-          name: "stuff",
+          name: "misc",
           links: [
             {
-              name: "linkedin",
-              url: "https://www.linkedin.com/feed/",
-              icon: "brand-linkedin",
-              icon_color: "#7daea3",
+              name: "wordle",
+              url: "https://www.nytimes.com/games/wordle/index.html",
+              icon: "flame",
+              icon_color: "#ea6962",
+            },
+            {
+              name: "monkeytype",
+              url: "https://monkeytype.com/",
+              icon: "keyboard",
+              icon_color: "#E2B714",
+            },
+            {
+              name: "2048",
+              url: "https://play2048.co/",
+              icon: "device-gamepad",
+              icon_color: "#89b482",
             },
           ],
         },
@@ -332,3 +427,19 @@ const CONFIG = new Config(saved_config ?? default_config);
   if (!CONFIG.config.localIcons)
     document.getElementsByTagName('head')[0].appendChild(css);
 })();
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  const tabsList = document.querySelector('tabs-list');
+  const hours = new Date().getHours();
+  
+  if (hours >= 18 || hours < 6) {
+      // If the time is between 6 PM and 6 AM, apply the 'night' class
+      tabsList.classList.add('night');
+  } else {
+      // Otherwise, ensure the 'night' class is removed
+      tabsList.classList.remove('night');
+  }
+});
+
+// Execute the function when the DOM is fully loaded
+document.addEventListener("DOMContentLoaded", changeBackgroundBasedOnTime);

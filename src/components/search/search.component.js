@@ -48,11 +48,11 @@ class Search extends Component {
           background: none;
           font: 500 22px 'Roboto', sans-serif;
           letter-spacing: 1px;
-          color: #d4be98;
+          color: white;
       }
 
       #search input:focus {
-          box-shadow: inset 0 -2px #d4be98;
+          box-shadow: inset 0 -2px #bbb;
       }
 
       #search input::selection {
@@ -64,7 +64,7 @@ class Search extends Component {
           background: 0;
           border: 0;
           outline: 0;
-          color: #d4be98;
+          color: #8e8e8e;
           position: absolute;
           right: 0;
           cursor: pointer;
@@ -77,7 +77,7 @@ class Search extends Component {
 
       .search-engines {
           list-style: none;
-          color: rgba(212, 190, 152, 0.5);
+          color: rgba(219, 219, 219, 0.5);
           display: flex;
           padding: 0;
           top: 50px;
@@ -97,7 +97,7 @@ class Search extends Component {
       }
 
       .search-engines li.active {
-          color: #d4be98;
+          color: rgb(191, 191, 191);
           font-weight: 700;
       }
     `;

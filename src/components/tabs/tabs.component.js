@@ -209,7 +209,7 @@ class Tabs extends Component {
       }
 
       .categories ul .links a {
-          color: #d4be98;
+          color: #bfbfbf;
           text-decoration: none;
           font: 700 18px 'Roboto', sans-serif;
           transition: all .2s;
@@ -234,31 +234,31 @@ class Tabs extends Component {
           color: var(--flavour);
       }
 
-      .categories ul::after {
-          content: attr(class);
-          position: absolute;
-          display: flex;
-          text-transform: uppercase;
-          overflow-wrap: break-word;
-          width: 25px;
-          height: 250px;
-          padding: 1em;
-          margin: auto;
-          border-radius: 5px;
-          box-shadow: inset 0 0 0 2px var(--flavour);
-          left: calc(15% - 42.5px);
-          bottom: 0;
-          top: 0;
-          background: linear-gradient(to top, rgb(50 48 47 / 90%), transparent);
-          color: var(--flavour);
-          letter-spacing: 1px;
-          font: 500 30px 'Nunito', sans-serif;
-          text-align: center;
-          flex-wrap: wrap;
-          word-break: break-all;
-          align-items: center;
-          backdrop-filter: blur(3px);
-      }
+      // .categories ul::after {
+      //     content: attr(class);
+      //     position: absolute;
+      //     display: flex;
+      //     text-transform: uppercase;
+      //     overflow-wrap: break-word;
+      //     width: 25px;
+      //     height: 250px;
+      //     padding: 1em;
+      //     margin: auto;
+      //     border-radius: 5px;
+      //     box-shadow: inset 0 0 0 2px var(--flavour);
+      //     left: calc(15% - 42.5px);
+      //     bottom: 0;
+      //     top: 0;
+      //     background: linear-gradient(to top, rgb(50 48 47 / 90%), transparent);
+      //     color: var(--flavour);
+      //     letter-spacing: 1px;
+      //     font: 500 30px 'Nunito', sans-serif;
+      //     text-align: center;
+      //     flex-wrap: wrap;
+      //     word-break: break-all;
+      //     align-items: center;
+      //     backdrop-filter: blur(3px);
+      // }
 
       .categories .links li:not(:last-child) {
           box-shadow: 0 1px 0 rgba(212, 190, 152, .25);
@@ -267,13 +267,13 @@ class Tabs extends Component {
       }
 
       .categories .links li h1 {
-          color: #d4be98;
+          color: rgb(234, 210, 184);
 	        opacity: 0.5;
           font-size: 13px;
           margin-bottom: 1em;
           font-weight: 600;
           letter-spacing: 1px;
-          text-transform: uppercase;
+          // text-transform: uppercase;
           font-family: 'Raleway', sans-serif;
       }
 

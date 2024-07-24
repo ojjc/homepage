@@ -1,6 +1,6 @@
 class WeatherForecastClient {
   constructor(location) {
-    this.appId = '50a34e070dd5c09a99554b57ab7ea7e2';
+    this.appId = '26b2d0ef90807ed0b220d6f5ebfbf814';
     this.url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(location)}&units=metric&appid=${this.appId}`;
   }
 
