@@ -53,6 +53,12 @@ const default_config = {
             icon: "eye",
             icon_color: "#89b482",
           },
+          {
+            name: "tcb-scans",
+            url: "https://tcbscans.me/",
+            icon: "book",
+            icon_color: "white",
+          },
         ],
       }, {
         name: "prod",
