@@ -45,7 +45,8 @@ const default_config = {
             name: "twitch",
             url: "https://www.twitch.tv/",
             icon: "brand-twitch",
-            icon_color: "#d3869b",
+            // icon_color: "#d3869b",
+            icon_color: "#A970FF",
           },
           {
             name: "aniwave",
