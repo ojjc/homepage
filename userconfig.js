@@ -54,6 +54,12 @@ const default_config = {
             icon_color: "#89b482",
           },
           {
+            name: "aniwave",
+            url: "https://aniwave.to/",
+            icon: "device-tv",
+            icon_color: "#e78a4e",
+          },
+          {
             name: "tcb-scans",
             url: "https://tcbscans.me/",
             icon: "book",
