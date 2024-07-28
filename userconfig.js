@@ -48,16 +48,16 @@ const default_config = {
             icon_color: "#d3869b",
           },
           {
-            name: "streameast",
-            url: "https://the.streameast.app/v78",
-            icon: "eye",
-            icon_color: "#89b482",
-          },
-          {
             name: "aniwave",
             url: "https://aniwave.to/",
             icon: "device-tv",
             icon_color: "#e78a4e",
+          },
+          {
+            name: "streameast",
+            url: "https://the.streameast.app/v78",
+            icon: "eye",
+            icon_color: "#89b482",
           },
           {
             name: "tcb-scans",
