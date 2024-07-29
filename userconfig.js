@@ -445,14 +445,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const tabsList = document.querySelector('tabs-list');
   const hours = new Date().getHours();
   
-  if (hours >= 18 || hours < 6) {
-      // If the time is between 6 PM and 6 AM, apply the 'night' class
+  if (hours >= 20 || hours < 6) {
+      // if the time is between 8 PM and 6 AM, apply the 'night' class
       tabsList.classList.add('night');
   } else {
-      // Otherwise, ensure the 'night' class is removed
+      // otherwise, the 'night' class is removed
       tabsList.classList.remove('night');
   }
 });
 
-// Execute the function when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", changeBackgroundBasedOnTime);
